@@ -8,7 +8,11 @@ var started = false;
 var level = 0;
 
 $("body").click(function() {
-  startGame();
+  if (!started) {
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    started = true;
+  }
 });
 
 $(document).keypress(function() {
